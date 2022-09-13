@@ -8,4 +8,4 @@ spec:
     - name: my-app
       type: webservice
       properties:
-        image: ghcr.io/fogdong/test-fog:master-c38379ba-1634977126 # {"$imagepolicy": "default:image-gitops"}
+        image: nexus.cmss.com:8086/cnp/nginx:1.20.2 # {"$imagepolicy": "default:image-gitops"}

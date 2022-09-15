@@ -8,4 +8,4 @@ spec:
     - name: my-app
       type: webservice
       properties:
-        image: nexus.cmss.com:8086/cnp/nginx:1.20.5 # {"$imagepolicy": "test-env-0914:test-app-0914-2"}
+        image: nexus.cmss.com:8086/cnp/nginx:1.20.6 # {"$imagepolicy": "test-env-0914:test-app-0914-2"}

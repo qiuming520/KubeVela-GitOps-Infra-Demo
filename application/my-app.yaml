@@ -1,39 +1,39 @@
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: grapscale-nginx-0916
-  namespace: default
   labels:
-    app: grapscale-nginx
+    app: grayscale-nginx
+  name: grayscale-nginx-0916
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
-      app: grapscale-nginx
+      app: grayscale-nginx
   template:
     metadata:
       labels:
-        app: grapscale-nginx
+        app: grayscale-nginx
     spec:
       containers:
-      - image: nexus.cmss.com:8086/cnp/nginx:1.20.7 # {"$imagepolicy": "test-env-0914:test-app-0914-2"}
-        name: grapscale-nginx-0916
-        ports:
-        - containerPort: 80
+        - image: nexus.cmss.com:8086/cnp/nginx:1.20.7
+          name: grayscale-nginx-0916
+          ports:
+            - containerPort: 80
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: grapscale-nginx-0916
-  namespace: default
   labels:
-    app: grapscale-nginx
+    app: grayscale-nginx
+  name: grayscale-nginx-0916
 spec:
   ports:
-  - name: http
-    port: 80
-    protocol: TCP
-    targetPort: 18080
+    - name: http
+      port: 80
+      protocol: TCP
+      targetPort: 18080
   selector:
-    app: grapscale-nginx
+    app: grayscale-nginx
   type: LoadBalancer
+---

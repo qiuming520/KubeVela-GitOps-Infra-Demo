@@ -1,11 +1,11 @@
 apiVersion: core.oam.dev/v1beta1
 kind: Application
 metadata:
-  name: my-app-test-edit-2
+  name: my-app-0916
   namespace: default
 spec:
   components:
-    - name: my-app-test-edit-3
+    - name: my-app-0916
       type: webservice
       properties:
         image: nexus.cmss.com:8086/cnp/nginx:1.20.6 # {"$imagepolicy": "test-env-0914:test-app-0914-2"}

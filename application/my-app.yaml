@@ -1,11 +1,19 @@
-apiVersion: core.oam.dev/v1beta1
-kind: Application
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: my-app-0916
-  namespace: default
+  name: my-nginx
+  labels:
+    app: my-nginx
 spec:
-  components:
-    - name: my-app-0916
-      type: webservice
-      properties:
-        image: nexus.cmss.com:8086/cnp/nginx:1.20.7 # {"$imagepolicy": "test-env-0914:test-app-0914-2"}
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-nginx
+  template:
+    metadata:
+      labels:
+        app: my-nginx
+    spec:
+      containers:
+      - image: nexus.cmss.com:8086/cnp/nginx:1.20.7 # {"$imagepolicy": "test-env-0914:test-app-0914-2"}
+        name: my-nginx
